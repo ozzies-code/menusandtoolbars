@@ -1,2 +1,32 @@
 # menusandtoolbars
 Visual interface that was designed using menus and toolbars with certain graphic utilities for the user.
+
+Public Class Form1
+
+    Private Sub FechaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FechaToolStripMenuItem.Click
+        Label1.Text = DateString
+    End Sub
+
+
+    Private Sub HoraToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HoraToolStripMenuItem.Click
+        Label1.Text = TimeString
+
+    End Sub
+
+    Private Sub ToolStripButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton1.Click
+        ColorDialog1.ShowDialog()
+        Label1.ForeColor = ColorDialog1.Color
+
+    End Sub
+
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub AbrirToolStripButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles AbrirToolStripButton.Click
+        OpenFileDialog1.Filter = "Bitmaps(*.bmp)|*.bmp"
+        If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            PictureBox1.Image = System.Drawing.Image.FromFile(openfiledialog1.FileName)
+        End If
+    End Sub
+End Class
